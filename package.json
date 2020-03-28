@@ -12,7 +12,10 @@
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.9.5",
-    "nuxt": "^2.0.0"
+    "chart.js": "^2.9.3",
+    "nuxt": "^2.0.0",
+    "vue-chartjs": "^3.5.0",
+    "vue-d3-charts": "^0.2.8"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.0.0"
