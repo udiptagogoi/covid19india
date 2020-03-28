@@ -47,7 +47,7 @@
             
           </div>
         </div>
-        <div class="flex flex-wrap m-2 justify-center" v-for="(region,index) in regional" :key="index">
+        <div class="flex flex-wrap m-2 justify-center" v-for="(region,index) in regional2" :key="index">
           <Summary :summary="region" :is_regional="true"/>
         </div>
         
@@ -76,6 +76,7 @@ export default {
       stats:[],
       summary:'',
       regional:[],
+      regional2:[],
       last_update:'',
       last_origin_update:'',
       chart_config :{
@@ -112,6 +113,7 @@ export default {
       this.stats = stats;
       this.summary = stats.data.summary;
       this.regional = stats.data.regional;
+      this.regional2 = stats.data.regional;
       this.last_update = stats.data.lastRefreshed;
       this.last_origin_update = stats.data.lastOriginUpdate;
       this.mapRegions();
