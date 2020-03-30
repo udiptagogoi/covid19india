@@ -60,15 +60,17 @@
                 <div class="flex">
                   <div>
                   <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
-                    <p class="text-sm text-justify">The Government of Assam has converted all Government Hospitals into COVID-19 treatment centers considering the current pandemic situation. The Government has also arranged for the empanelled hospitals listed below to offer cashless treatment tp all AAA and PMJAY beneficiaries for varuous ailments . 
+                    <p class="text-sm text-justify">The Government of Assam has converted all Government Hospitals into COVID-19 treatment centers considering the current pandemic situation. The Government has also arranged for the empanelled hospitals listed below to offer cashless treatment to all AAA and PMJAY beneficiaries for various ailments . 
                     </p>
                   </div>
                 </div>
               </div>
-              
-              <div class="p-2 text-sm font-medium mb-2 bg-blue-500 text-white">
-                The following specialities are available in the empanelled private hospitals mentioned below .
+              <div class="flex items-center bg-blue-500 text-white text-sm font-bold px-4 py-3 mb-4" role="alert">
+                <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.432 0c1.34 0 2.01.912 2.01 1.957 0 1.305-1.164 2.512-2.679 2.512-1.269 0-2.009-.75-1.974-1.99C9.789 1.436 10.67 0 12.432 0zM8.309 20c-1.058 0-1.833-.652-1.093-3.524l1.214-5.092c.211-.814.246-1.141 0-1.141-.317 0-1.689.562-2.502 1.117l-.528-.88c2.572-2.186 5.531-3.467 6.801-3.467 1.057 0 1.233 1.273.705 3.23l-1.391 5.352c-.246.945-.141 1.271.106 1.271.317 0 1.357-.392 2.379-1.207l.6.814C12.098 19.02 9.365 20 8.309 20z"/></svg>
+                <p>The following specialities are available in the empanelled private hospitals mentioned below .
+                </p>
               </div>
+             
               <p class="text-left text-sm font-medium mb-2" v-for="(hospital,index) in hospitals" :key="index">
                 <span class="text-gray-800">{{index+1}}.</span> <span class="text-gray-700">{{hospital.name}}</span> <br>
                 <section class="border-solid border-2 p-2">
