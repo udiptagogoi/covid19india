@@ -3,13 +3,14 @@
     <div class="flex flex-col">
       <div class="flex justify-center">
         <div class="mb-4 mt-4">
-          <h6 class="text-sm font-semibold text-gray-700">
+          <!-- <h6 class="text-sm font-semibold text-gray-700">
             COVID-19 Cases in India
-          </h6>
+          </h6> -->
+          <Logo :summary="summary"/>
         </div>
       </div>
       <div class="mb-4">
-        <div class="flex flex-wrap mb-4 justify-center">
+        <!-- <div class="flex flex-wrap mb-4 justify-center">
           <Summary :summary="summary" :is_regional="false" :last_update="last_update"/>
         </div>
         <div class="chart w-screen sm:p-4 md:p-4 lg:p-4 overflow-x-auto"> 
@@ -46,11 +47,11 @@
             </section>
             
           </div>
-        </div>
+        </div> -->
         <!-- <div class="flex flex-wrap m-2 justify-center" v-for="(region,index) in regional2" :key="index">
           <Summary :summary="region" :is_regional="true"/>
         </div> -->
-        <div class="map mt-2">
+        <!-- <div class="map mt-2">
           <Charts :regions="regional" v-if="regional" />
         </div>
         <div class="chart w-screen sm:p-4 md:p-4 lg:p-4 ">
@@ -79,7 +80,7 @@
                 </section>
               </p>
           </div>
-        </div>
+        </div> -->
         
       </div>
      

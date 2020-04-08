@@ -1,12 +1,12 @@
 <template>
   <div>
     <nuxt />
-     <footer>
+     <!-- <footer>
       <p class="text-center text-gray-600 text-semibold text-sm mb-4 pt-4">
         Made with <img src="/heart.svg" alt="" class="inline" width="12" /> by
        <a href="https://www.instagram.com/udipta__gogoi/" class="text-indigo-600">Udipta Gogoi</a> 
       </p>
-    </footer>
+    </footer> -->
   </div>
 </template>
 

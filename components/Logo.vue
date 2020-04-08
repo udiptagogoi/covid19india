@@ -1,79 +1,126 @@
+
 <template>
-  <div class="VueToNuxtLogo">
-    <div class="Triangle Triangle--two" />
-    <div class="Triangle Triangle--one" />
-    <div class="Triangle Triangle--three" />
-    <div class="Triangle Triangle--four" />
-  </div>
+    <div id="stage" style="width: 120px; height: 120px;">
+        <div class="spinner">
+            <div class="face1 ">
+               <strong> COVID-19 <br>
+                INDIA</strong>
+            </div>
+            <div class="face2 text-green">
+                {{summary.discharged}} <br/>
+                <small><strong>DISCHARGED</strong></small>
+            </div>
+            <div class="face3 text-blue">
+                {{summary.total}} <br/>
+                <small><strong>CASES</strong></small>
+            </div>
+            <div class="face4 text-indigo">
+                {{summary.confirmedCasesIndian}} <br/>
+                <small><strong>INDIAN</strong></small>
+            </div>
+            <div class="face5 text-purple">
+                 {{summary.confirmedCasesForeign}} <br/>
+                <small><strong>FOREIGN</strong></small>
+            </div>
+            <div class="face6 text-red">
+                {{summary.deaths}}<br/>
+                <small><strong>DEATHS</strong></small>
+            </div>
+        </div>
+    </div>
 </template>
+<script>
+export default {
+    props:['summary'],
+    data(){
+        return{
 
+        }
+    }
+}
+</script>
 <style>
-.VueToNuxtLogo {
-  display: inline-block;
-  animation: turn 2s linear forwards 1s;
-  transform: rotateX(180deg);
-  position: relative;
-  overflow: hidden;
-  height: 180px;
-  width: 245px;
+.spinner div {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border: 1px solid #ccc;
+    background: rgba(255,255,255,0.8);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
+    text-align: center;
+    /* line-height: 120px; */
+    font-size: 18px;
 }
 
-.Triangle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
+.spinner .face1 { 
+    -webkit-transform: translateZ(60px);
+    -ms-transform: translateZ(60px);
+    transform: translateZ(60px);
+}
+.spinner .face2 { 
+    -webkit-transform: rotateY(90deg) translateZ(60px); 
+    -ms-transform: rotateY(90deg) translateZ(60px); 
+    transform: rotateY(90deg) translateZ(60px); 
+}
+.spinner .face3 { 
+    -webkit-transform: rotateY(90deg) rotateX(90deg) translateZ(60px); 
+    -ms-transform: rotateY(90deg) rotateX(90deg) translateZ(60px); 
+    transform: rotateY(90deg) rotateX(90deg) translateZ(60px); 
+}
+.spinner .face4 { 
+    -webkit-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px); 
+    -ms-transform: rotateY(180deg) rotateZ(90deg) translateZ(60px); 
+    transform: rotateY(180deg) rotateZ(90deg) translateZ(60px); 
+}
+.spinner .face5 { 
+    -webkit-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px); 
+    -ms-transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px); 
+    transform: rotateY(-90deg) rotateZ(90deg) translateZ(60px); 
+}
+.spinner .face6 { 
+    -webkit-transform: rotateX(-90deg) translateZ(60px); 
+    -ms-transform: rotateX(-90deg) translateZ(60px); 
+    transform: rotateX(-90deg) translateZ(60px); 
 }
 
-.Triangle--one {
-  border-left: 105px solid transparent;
-  border-right: 105px solid transparent;
-  border-bottom: 180px solid #41b883;
+.spinner {
+    -webkit-animation: spincube 24s ease-in-out infinite;
+    animation: spincube 24s ease-in-out infinite;
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 60px 60px 0;
+    -ms-transform-origin: 60px 60px 0;
+    transform-origin: 60px 60px 0;
 }
 
-.Triangle--two {
-  top: 30px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 87.5px solid transparent;
-  border-right: 87.5px solid transparent;
-  border-bottom: 150px solid #3b8070;
+@-webkit-keyframes spincube {
+    16%      { -webkit-transform: rotateY(-90deg);                }
+    33%      { -webkit-transform: rotateY(-90deg) rotateZ(90deg); }
+    50%      { -webkit-transform: rotateY(180deg) rotateZ(90deg); }
+    66%      { -webkit-transform: rotateY(90deg) rotateX(90deg);  }
+    83%      { -webkit-transform: rotateX(90deg);                 }
 }
-
-.Triangle--three {
-  top: 60px;
-  left: 35px;
-  animation: goright 0.5s linear forwards 3.5s;
-  border-left: 70px solid transparent;
-  border-right: 70px solid transparent;
-  border-bottom: 120px solid #35495e;
+@keyframes spincube {
+    16%      { -ms-transform: rotateY(-90deg); transform: rotateY(-90deg); }
+    33%      { -ms-transform: rotateY(-90deg) rotateZ(90deg); transform: rotateY(-90deg) rotateZ(90deg); }
+    50%      { -ms-transform: rotateY(180deg) rotateZ(90deg); transform: rotateY(180deg) rotateZ(90deg); }
+    66%      { -ms-transform: rotateY(90deg) rotateX(90deg); transform: rotateY(90deg) rotateX(90deg); }
+    83%      { -ms-transform: rotateX(90deg); transform: rotateX(90deg); }
 }
-
-.Triangle--four {
-  top: 120px;
-  left: 70px;
-  animation: godown 0.5s linear forwards 3s;
-  border-left: 35px solid transparent;
-  border-right: 35px solid transparent;
-  border-bottom: 60px solid #fff;
+.text-red{
+    color: red;
 }
-
-@keyframes turn {
-  100% {
-    transform: rotateX(0deg);
-  }
+.text-green{
+    color:green;
 }
-
-@keyframes godown {
-  100% {
-    top: 180px;
-  }
+.text-blue{
+    color: #2b6cb0;
 }
-
-@keyframes goright {
-  100% {
-    left: 70px;
-  }
+.text-indigo{
+    color: #4c51bf;
+}
+.text-purple{
+    color: #6b46c1;
 }
 </style>
